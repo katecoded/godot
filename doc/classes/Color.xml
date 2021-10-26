@@ -99,7 +99,7 @@
 			<return type="Color" />
 			<argument index="0" name="over" type="Color" />
 			<description>
-				Returns a new color resulting from blending this color over another. If the color is opaque, the result is also opaque. The second color may have a range of alpha values.
+				Returns a new [Color] resulting from blending this color over another. If the color is opaque, the result is also opaque. The second color may have a range of alpha values.
 				[codeblocks]
 				[gdscript]
 				var bg = Color(0.0, 1.0, 0.0, 0.5) # Green with alpha of 50%
@@ -119,14 +119,14 @@
 			<argument index="0" name="min" type="Color" default="Color(0, 0, 0, 0)" />
 			<argument index="1" name="max" type="Color" default="Color(1, 1, 1, 1)" />
 			<description>
-				Returns a new color with all components clamped between the components of [code]min[/code] and [code]max[/code], by running [method @GlobalScope.clamp] on each component.
+				Returns a new [Color] with all components clamped between the components of [code]min[/code] and [code]max[/code], by running [method @GlobalScope.clamp] on each component.
 			</description>
 		</method>
 		<method name="darkened" qualifiers="const">
 			<return type="Color" />
 			<argument index="0" name="amount" type="float" />
 			<description>
-				Returns a new color resulting from making this color darker by the specified percentage (ratio from 0 to 1).
+				Returns a new [Color] resulting from making this color darker by the specified percentage (ratio from 0 to 1).
 				[codeblocks]
 				[gdscript]
 				var green = Color(0.0, 1.0, 0.0)
@@ -143,6 +143,7 @@
 			<return type="int" />
 			<argument index="0" name="name" type="String" />
 			<description>
+				Returns the index of a standardized color with the given name. If [code]name[/code] is not a standardized color name, it returns -1. Supported color names are the same as constants.
 			</description>
 		</method>
 		<method name="from_rgbe9995" qualifiers="static">
@@ -156,23 +157,27 @@
 			<argument index="0" name="str" type="String" />
 			<argument index="1" name="default" type="Color" />
 			<description>
+				Constructs a [Color] either from an HTML color code or from a standardized color name. Uses [code]default[/color] if [code]str[/code] is invalid. Supported color names are the same as the constants.
 			</description>
 		</method>
 		<method name="get_named_color" qualifiers="static">
 			<return type="Color" />
 			<argument index="0" name="idx" type="int" />
 			<description>
+				Returns the [Color] for a standardized color at the given index.
 			</description>
 		</method>
 		<method name="get_named_color_count" qualifiers="static">
 			<return type="int" />
 			<description>
+				Returns the number of standardized colors available.
 			</description>
 		</method>
 		<method name="get_named_color_name" qualifiers="static">
 			<return type="String" />
 			<argument index="0" name="idx" type="int" />
 			<description>
+				Returns the name of the standardized color at the given index.
 			</description>
 		</method>
 		<method name="hex" qualifiers="static">
@@ -191,12 +196,14 @@
 			<return type="Color" />
 			<argument index="0" name="rgba" type="String" />
 			<description>
+				Constructs a [Color] from an HTML color code.
 			</description>
 		</method>
 		<method name="html_is_valid" qualifiers="static">
 			<return type="bool" />
 			<argument index="0" name="color" type="String" />
 			<description>
+				Returns [code]true[/code] if [code]color[/code] is a valid HTML color code. 
 			</description>
 		</method>
 		<method name="inverted" qualifiers="const">
