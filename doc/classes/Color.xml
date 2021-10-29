@@ -157,7 +157,7 @@
 			<argument index="0" name="str" type="String" />
 			<argument index="1" name="default" type="Color" />
 			<description>
-				Constructs a [Color] either from an HTML color code or from a standardized color name. Uses [code]default[/color] if [code]str[/code] is invalid. Supported color names are the same as the constants.
+				Constructs a [Color] either from an HTML color code or from a standardized color name. Uses [code]default[/code] if [code]str[/code] is invalid. Supported color names are the same as the constants.
 			</description>
 		</method>
 		<method name="get_named_color" qualifiers="static">
